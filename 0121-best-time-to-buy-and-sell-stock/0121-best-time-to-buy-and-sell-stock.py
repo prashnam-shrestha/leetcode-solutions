@@ -5,7 +5,7 @@ class Solution:
 
             for price in prices:
                 profit_assume = price - lowest_past
-                if (profit_assume) > max_profit:
+                if profit_assume > max_profit:
                     max_profit = profit_assume
                 
                 if price < lowest_past:
