@@ -4,9 +4,9 @@ class Solution:
             max_profit = 0
 
             for price in prices:
-        
-                if (price - lowest_past) > max_profit:
-                    max_profit = price - lowest_past
+                profit_assume = price - lowest_past
+                if (profit_assume) > max_profit:
+                    max_profit = profit_assume
                 
                 if price < lowest_past:
                     lowest_past = price
