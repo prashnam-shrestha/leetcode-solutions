@@ -5,10 +5,7 @@ public:
         int a = 0;
         while (x != 0) {
             // Check 32 bits limit first;
-            if (a > INT32_MAX / 10) {
-                return 0;
-            }
-            else if (a < INT32_MIN / 10) {
+            if (a > INT32_MAX / 10 || a < INT32_MIN / 10) {
                 return 0;
             }
             // x % 10 gets the last digit
