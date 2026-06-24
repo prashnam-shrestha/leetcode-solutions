@@ -1,29 +1,20 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        queue<int> negativeStock;
-        queue<int> positiveStock;
-
         int size = nums.size();
-
+        int even = 0;
+        int odd = 1;
+        vector<int> result(size);
         for (int i = 0; i < size; i++) {
             if (nums[i] >= 0) {
-                positiveStock.push(nums[i]);
+                result[even] = nums[i];
+                even += 2;
             }
             else {
-                negativeStock.push(nums[i]);
+                result[odd] = nums[i];
+                odd += 2;
             }
         }
-        for (int i = 0; i < size; i++) {
-            if (i % 2 == 0) {
-                nums[i] = positiveStock.front();
-                positiveStock.pop();
-            }
-            else {
-                nums[i] = negativeStock.front();
-                negativeStock.pop();
-            }
-        }
-        return nums;
+        return result;
     }
 };
