@@ -2,25 +2,16 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         
-        vector<int> output(2);
+        unordered_map<int, int> freq;
+        int size = nums.size();
 
-            int size = nums.size();
-            bool run = true;
-            for (int i = 0; i < size && run; i++) {
+        for (int i = 0; i < size; i++) {
 
-                for (int j = 0; j < size; j++) {
-
-                    if (i == j) { continue; }
-                    
-                    if (nums[i] + nums[j] == target) {
-                        output[0] = (i);
-                        output[1] = (j);
-                        run = false;
-                        break;
-                    }
-                    
-                }
+            if (freq.find(target - nums[i]) != freq.end()) {
+                return vector<int>{freq[target - nums[i]], i};
             }
-            return output;
+            else {freq[nums[i]] = i;}
+        }
+        return vector<int>{0, 0};
     }
 };
