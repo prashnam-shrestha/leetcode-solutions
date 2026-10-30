@@ -107,4 +107,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0048-rotate-image](https://github.com/prashnam-shrestha/leetcode-solutions/tree/master/0048-rotate-image) |
 | [0054-spiral-matrix](https://github.com/prashnam-shrestha/leetcode-solutions/tree/master/0054-spiral-matrix) |
 | [0073-set-matrix-zeroes](https://github.com/prashnam-shrestha/leetcode-solutions/tree/master/0073-set-matrix-zeroes) |
+## Quicksort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/prashnam-shrestha/leetcode-solutions/tree/master/0075-sort-colors) |
+## Bubble Sort
+|  |
+| ------- |
+| [0075-sort-colors](https://github.com/prashnam-shrestha/leetcode-solutions/tree/master/0075-sort-colors) |
 <!---LeetCode Topics End-->
