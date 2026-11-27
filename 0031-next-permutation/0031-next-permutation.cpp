@@ -10,12 +10,12 @@ public:
                         if (nums[j] > nums[i-1]) {
                             swap(nums[j], nums[i-1]);
                         
-                            sort(nums.begin() + i, nums.end());
+                            reverse(nums.begin() + i, nums.end());
                             return;
                         }
                     }
                 }
             }
-        sort(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.end());
     }
 };
