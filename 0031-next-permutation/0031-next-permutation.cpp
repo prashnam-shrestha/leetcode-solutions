@@ -1,40 +1,21 @@
 class Solution {
 public:
-    void reverseFunction(vector<int> &nums, int left, int right) {
-    while (left < right) {
-        swap(nums[left], nums[right]);
-        left ++;
-        right --;
-    }
-    }
     void nextPermutation(vector<int>& nums) {
         int size = nums.size();
+            for (int i = size - 1; i > 0; i--) {
 
-        int breakingPoint = -1;
-        int replace = INT_MAX;
-        int replaceIndex = -1;
+                if (nums[i] > nums[i - 1]) {
+                    for (int j = size - 1; j > (i - 1); j--) {
 
-        for (int i = size - 1; i > 0; i--) {
-            if (nums[i] > nums[i-1]) {
-                breakingPoint = i - 1;
-                break;
-            }
-        }
-        if (breakingPoint == -1) {
-            // Return the reversed one'
-            reverseFunction(nums, 0, size - 1);
-            return;
-        }
-
-        for (int i = size - 1; i > breakingPoint; i--) {
-            if (nums[i] > nums[breakingPoint]) {
-                if (nums[i] < replace) {
-                    replace = nums[i];
-                    replaceIndex = i;
+                        if (nums[j] > nums[i-1]) {
+                            swap(nums[j], nums[i-1]);
+                        
+                            sort(nums.begin() + i, nums.end());
+                            return;
+                        }
+                    }
                 }
             }
-        }
-        swap(nums[breakingPoint], nums[replaceIndex]);
-        reverseFunction(nums, breakingPoint + 1, size - 1);
+        sort(nums.begin(), nums.end());
     }
 };
